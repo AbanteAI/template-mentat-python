@@ -3,6 +3,15 @@
 # Activate virtual environment if it exists
 if [ -d ".venv" ]; then
     source .venv/bin/activate
+else
+    echo "Error: Virtual environment not found. Run setup.sh first."
+    exit 1
+fi
+
+# Check if required tools are installed
+if ! command -v ruff &> /dev/null || ! command -v pyright &> /dev/null; then
+    echo "Error: Required tools (ruff, pyright) not found. Make sure setup.sh was run successfully."
+    exit 1
 fi
 
 # Format code with ruff
