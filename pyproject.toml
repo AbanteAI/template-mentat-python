@@ -26,10 +26,11 @@ dev = [
     "pyright>=1.1.350",
 ]
 
-[tool.pytest]
+[tool.pytest.ini_options]
 testpaths = ["tests"]
 python_files = "test_*.py"
 python_functions = "test_*"
+addopts = "--cov=src --cov-report=term --cov-fail-under=83"
 
 [tool.ruff]
 target-version = "py38"
