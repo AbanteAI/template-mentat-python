@@ -1,6 +1,6 @@
 """Tests for hello world module."""
+
 import io
-import sys
 from unittest.mock import patch
 
 from src.hello_world.main import hello_world, main
